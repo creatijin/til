@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>닌자비급</title>
+</head>
+<style>
+    h1,h2,h3,h4,h5 {
+        border-left: 4px solid rgb(255, 51, 153);
+    }
+    p { padding: 20px; background-color: #e1e1e1; }
+    ul, li { list-style: none; text-decoration: none; position: relative; }
+    li:before {
+        position: absolute;
+        left: 3px;
+        top:3px;
+        content: '';
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: rgb(255, 51, 153);
+    }
+</style>
+<body>
+    <h2>1.2 자바스크립트 이해하기</h2>
+    <p>객체, 함수, 클로저는 서로 긴밀한 관계를 맺고있다.</p>
+    <h2>1.3 크로스 브라우저 고려하기</h2>
+    <p>각 브라우저에 국한된 특이점들(quirks)이 있고 이를 처리해야 한다.<br>이 이슈들을 해결하기 위한 종합적인 전략을 개발하는 것과<br>개별 브라우저 간의 차이점과 특이점들을 깊이 이해해야 한다.</p>
+
+    <p>어떤 브라우저를 어느 수준까지 지원할것 인가? - "<span>*등급별 브라우저 지원</span>"</p>
+    <p>*브라우저와 플랫폼의 조합을 나타내는 표 - A ~ F 또는 정리한 등급표시</p>
+    <h4>고려사항</h4>
+    <ul>
+        <li>대상 이용자가 기대하는 바와 필요로 하는 것들</li>
+        <li>브라우저 시장 점유율</li>
+        <li>브라우저를 지원하는데 드는 노력</li>
+    </ul>
+    
+    <h2>3.함수가 핵심이다.</h2>
+    
+    <h3>함수 >>> <span>*1종 객체(first-class object)</span></h3>
+    
+    <p>함수가 객체와 같은 지위를 가지며, 일반적인 다른 객체 처럼 취급이 가능하다.<br>변수를 통해 함수를 참조할 수 있고, 리터럴로 함수를 선언할 수 있으며<br>함수를 다른 함수의 매개변수로 전달 할 수 있다.</p>
+    
+    <h3>자바 명령문</h3>
+
+
+​    
+    <h3>함수형 접근방식을 사용한 자바스크립트 코드</h3>
+    
+    <h3>1종 객체로서의 함수(1종 객체의 특징이기도 하다)</h3>
+    <ul>
+        <li>리터럴로 생성될 수 있다.</li>
+        <li>변수, 배열 엘리먼트, 다른 객체의 프로퍼티에 할당 될 수 있다.</li>
+        <li>함수의 인자로 전달 될 수 있다.</li>
+        <li>함수의 결과 값으로 반환 될 수 있다.</li>
+        <li>동적으로 생성된 프로퍼티를 가질 수 있다.</li>
+    </ul>
+</body>
+</html>
