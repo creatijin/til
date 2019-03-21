@@ -99,3 +99,32 @@ str[0] 를 출력했을때 't'를 출력할 수 있다. 그리고 예제에서 s
 
 **자바스크립트에서는 한 번 생성된 문자열은 읽기만 가능하지 수정은 불가능하다**
 
+
+
+### 불린값
+
+true와 false 나 타내는 [3]에서 변수에 'true'로 값을 지정했으므로 boolean 타입이다.
+
+
+
+### null and undefined
+
+"null" 과 "undefined" 둘다 값이 비어있음을 나타낸다.
+
+기본적으로 값이 할당되지 않는 변수는 undefined 타입이며, undefined 타입의 변수는 변수 자체의 값 또한 undefined 이다. **undefined는 타입이자, 값을 나타낸다.**
+
+"null"의 경우 개발자가 명시적으로 값이 비어있음을 나타내는데 사용한다.
+
+**주의** 할점은 null 타입 변수는 typeof 결과가 null이 아니라 object라는 것!!
+
+Typeof 연산자를 사용하면 안되고, 일치 연산자(===)를 사용해서 변수의 값을 지정 확인 한다.
+
+~~~javascript
+//null 타입 변수 생성
+var nullVar = null;
+
+console.log(typeof nullVar === null) // false
+console.log(nullVar === null) // true
+
+~~~
+
