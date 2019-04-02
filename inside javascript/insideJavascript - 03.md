@@ -41,9 +41,61 @@ foo.sum();
 
 ## 객체 생성
 
-객체를 생성하는 방법 3가지
+객체를 생성하는 방법 3가지 방법이 있다.
 
 1. 기본 제공 Object() 객체를 이용하는 방법
 2. 객체 리터럴
-3. 생산자 함수
+3. 생산자(constructor) 함수
+
+~~~javascript
+//1. Object() 생산자 함수
+//내장 Object() 생성자 함수를 이용하여 객체 생성
+
+//빈 객체 생성
+var obj = new Object();
+
+//객체 프로퍼티 생성
+obj.name = "Creatijin";
+obj.age = "28";
+
+console.log(typeof obj) // 출력값 - object
+console.log(obj)  // 출력값 - { name: "Creatijin", age: "28" }
+~~~
+
+~~~javascript
+//2. 리터럴 방식
+//객체 리터럴 방식은 간단한 표기법으로 객체를 생성할 수 있다.
+
+//객체 생성
+var obj = {
+    name: "Creatijin",
+    age: "28"
+}
+
+console.log(typeof obj) // 출력값 - object
+console.log(obj)  // 출력값 - { name: "Creatijin", age: "28" }
+~~~
+
+~~~javascript
+//3. 생성자 함수
+// 생성자 와 new 
+
+//함수생성
+function person(name) {
+    this.name = name;
+    //메소드 생성
+	this.inroduce = function() {
+		return 'My name is ' + this.name;
+	}
+}
+
+// 생성자 
+var c1 = new person("creatijin");
+var c2 = new person("seungdols");
+
+console.log(c1.inroduce()) // 출력값 - My name is creatijin
+console.log(c2.inroduce()) // 출력값 - My name is seungdols
+
+//생성자 함수의 장점은 초기화(initialize)를 통해 코드의 재사용성을 높인다.
+~~~
 
