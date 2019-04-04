@@ -99,3 +99,62 @@ console.log(c2.inroduce()) // 출력값 - My name is seungdols
 //생성자 함수의 장점은 초기화(initialize)를 통해 코드의 재사용성을 높인다.
 ~~~
 
+
+
+### 객체 프로퍼티 읽기/쓰기/갱신
+
+- 대괄호 ([]) 표기법
+- 마침표 (.) 표기법
+
+~~~javascript
+//객체 리터럴로 생성
+var obj = {
+    name: "Creatijin",
+    age: "28",
+    coffee: "KANU"
+}
+
+//읽기
+console.log(obj.name);	// 출력값 - Creatijin
+console.log(obj['name']);	// 출력값 - Creatijin
+
+//갱신
+obj.coffee = "Maxim";
+console.log(obj.coffee);	//출력값 - Maxim
+console.log(obj["coffee"]);	//출력값 - Maxim
+
+
+//동적 생성
+obj.apple = "mac";
+console.log(obj.apple);	// 출력값 - mac
+~~~
+
+
+
+#### for in 문 과 삭제
+
+for in 문을 사용하면 객체에 포함된 모든 프로퍼티에 대한 루프를 수행 가능하다.
+
+~~~javascript
+var obj = {
+    name: "Creatijin",
+    age: "28",
+    coffee: "KANU"
+}
+
+var prop;
+for (prop in obj) {
+    console.log(prop, obj.prop)
+}
+
+// 출력값
+name Creatijin
+age 28
+coffee KANU
+
+delete obj.coffee;
+console.log(obj.coffee);	// 출력값 - undefined
+~~~
+
+
+
