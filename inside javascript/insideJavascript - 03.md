@@ -158,3 +158,67 @@ console.log(obj.coffee);	// 출력값 - undefined
 
 
 
+####객체 프로퍼티 삭제
+
+**delete** 연산자를 이용하면 객체의 프로퍼티를 즉시 삭제할 수 있다.
+
+**delete 연산자는 객체의 프로퍼티를 삭제할 뿐 객체 자체는 삭제가 불가능하다.**
+
+~~~javascript
+var obj = {
+    name: "Creatijin",
+    age: "28",
+    coffee: "KANU"
+}
+
+console.log(obj.coffee); // 출력값 - KANU
+delete obj.coffee; // 출력값 coffee 프로퍼티 삭제
+console.log(obj.coffee); // 출력값 - undefind
+
+delete obj;
+console.log(obj.name); // 출력값 - Creatijin
+~~~
+
+
+
+### 참조 타입 특성
+
+자바스크립트에서 기본타입을 제외한 모든 값은 객체이고 이것을 **참조타입**이라고 부른다.
+
+객체의 모든 연산이 실제 값이 아닌 참조 값으로 처리된다.
+
+~~~javascript
+var A = { val : 40 } // (1)
+var B = A; // (2)
+
+console.log(A.val);	// 출력값 - 40
+console.log(B.val);	// 출력값 - 40
+
+B.val = 50; // (3)
+
+console.log(A.val);	// 출력값 - 50
+console.log(B.val);	// 출력값 - 50
+~~~
+
+1. A 변수에 40을 참조값으로 저장한다.
+2. B 변수에 A 변수 값을 할당한다. B, A는 같은 참조값을 바라보게 된다.
+3. B 변수의 val의 값을 50으로 갱신했다. 이때 같은 참조값을 바라보는 A.val도 50의 값으로 변경된다.
+
+
+
+#### 객체 비교
+
+동등 연산자를 사용할때 객체의 프로퍼티 값을 비교하는 것이 아닌 참조값을 비교한다.
+
+~~~javascript
+var a = 100;
+var b = 100;
+
+var objA = { val: 100 };
+var objB = { val: 100 };
+var objC = objB;
+
+console.log(a == b)	// 출력값 - true (1)
+console.log(objA == objB)	// 출력값 - false (2)
+console.log(objB == objC)	// 출력값 - true (2)
+~~~
