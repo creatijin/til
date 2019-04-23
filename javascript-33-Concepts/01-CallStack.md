@@ -38,6 +38,41 @@ Three, two, one, zero 순서로 종료된다. 여기서 one() 다음 throw Error
 
 
 
+#### +스택붕괴
+
+자바스크립트에서는 스택을 무한으로 쌓을 수 있는게 아니기 때문에 스택이 붕괴될때 에러가 나는 현상이 있다.
+
+~~~javascript
+function hello() {
+    bye();
+}
+function bye() {
+    hello();
+}
+bye();
+
+//출력값
+/*
+VM83:4 Uncaught RangeError: Maximum call stack size exceeded
+    at bye (<anonymous>:4:13)
+    at hello (<anonymous>:2:5)
+    at bye (<anonymous>:5:5)
+    at hello (<anonymous>:2:5)
+    at bye (<anonymous>:5:5)
+    at hello (<anonymous>:2:5)
+    at bye (<anonymous>:5:5)
+    at hello (<anonymous>:2:5)
+    at bye (<anonymous>:5:5)
+    at hello (<anonymous>:2:5)
+*/
+~~~
+
+위에 예제를 보듯 "Maximum call stack exceeded" 라는 문구가 뜨면서 에러가 발생한다.
+
+자바스크립트는 스택에 올릴 수 있는 수가 제한이 있다.
+
+
+
 ### 요약
 
 리스트가 존재하고 함수는 리스트에 추가가 된다.
